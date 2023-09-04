@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <div className="hero">
+    <div className="hero max-width">
       <h1>CAPTURE EVERYTHING</h1>
       <p>Express yourself without limitation.</p>
       <div>

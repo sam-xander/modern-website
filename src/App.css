@@ -49,10 +49,52 @@ a {
 
 /* GLOBAL STYLES */
 
+.max-width {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(10vh);
+  visibility: hidden;
+  transition: opacity 0.4s ease-out, transform 0.6s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #c86767;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+
 button {
   border: none;
   border-radius: 2px;
-  background: rgba(217, 217, 217, 0.9);
+  background: #c86767;
   color: #44302e;
   padding: 5px 14px;
   text-align: center;
@@ -81,7 +123,7 @@ h1 {
 }
 
 h2 {
-  color: rgba(217, 217, 217, 0.9);
+  color: #c86767;
   font-family: IBM Plex Mono;
   font-size: 32px;
   font-style: normal;
@@ -101,7 +143,7 @@ p {
 }
 
 .link {
-  color: rgba(217, 217, 217, 0.9);
+  color: #c86767;
   font-size: 15px;
   font-weight: 700;
   line-height: normal;
@@ -115,13 +157,30 @@ p {
   padding-left: 20px;
 }
 
-/* CUSTOM STYLES */
-
-main {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 20px 0;
+.slider__image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  padding: 20px;
+  outline: none;
 }
+
+.slider__image img {
+  border-radius: 10px;
+}
+
+.slick-dots li button:before {
+  color: rgba(217, 217, 217, 0.8) !important;
+}
+.slick-dots li.slick-active button:before {
+  color: rgba(217, 217, 217, 0.8) !important;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: rgba(217, 217, 217, 0.8) !important;
+}
+
+/* CUSTOM STYLES */
 
 .navigation {
   display: flex;
@@ -224,11 +283,13 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .mission__header a.link {
   opacity: 0.9;
   transition: 200ms;
+  color: #c86767;
 }
 
 .mission__header a.link:hover {

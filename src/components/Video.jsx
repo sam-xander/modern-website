@@ -1,6 +1,6 @@
 function Video() {
   return (
-    <div className="video-container">
+    <div className="video-container max-width">
       <div className="video-background"></div>
       <div className="video">
         <svg
